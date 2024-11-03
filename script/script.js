@@ -87,7 +87,7 @@ function updateDisplay() {
 
 function endGame(won) {
     RESET_BTN_EL.style.display = "block";
-    FEEDBACK_EL.textContent = won ? "Congratulations! You won!" : "Thanks for playing!🌸";
+    FEEDBACK_EL.textContent = won ? "Congratulations! You won!💅🏾" : "Thanks for playing!🌸";
 }
 
 window.onload = startGame;
