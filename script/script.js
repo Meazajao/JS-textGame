@@ -10,7 +10,7 @@ const ATTEMPTS_LEFT_EL = document.getElementById("attempts-left");
 const GUESSED_NUMBERS_EL = document.getElementById("guessed-numbers");
 const RESET_BTN_EL = document.getElementById("reset-btn");
 
-function startGame() {
+const startGame = () => {
     const RANDOM_INDEX = Math.floor(Math.random() * NUMBERS.length);
     targetNumbers = NUMBERS[RANDOM_INDEX];
     attemptsLeft = MAX_ATTEMPTS;
@@ -24,7 +24,7 @@ function startGame() {
     playGame();
 }
 
-function playGame() {
+const playGame =() => {
     while (attemptsLeft > 0) {
         let userGuess = prompt(
             `Guess a number between 1 and ${RANGE}:\nAttempts left: ${attemptsLeft}\nYour guesses: ${guessedNumbers.join(", ")}`
@@ -79,13 +79,13 @@ function playGame() {
     }
 }
 
-function updateDisplay() {
+const updateDisplay = () => {
     FEEDBACK_EL.textContent = "Keep guessing";
     ATTEMPTS_LEFT_EL.textContent = attemptsLeft;
     GUESSED_NUMBERS_EL.textContent = guessedNumbers.join(", ");
 }
 
-function endGame(won) {
+const endGame =(won) => {
     RESET_BTN_EL.style.display = "block";
     FEEDBACK_EL.textContent = won ? "Congratulations! You won!💅🏾" : "Thanks for playing!🌸";
 }
